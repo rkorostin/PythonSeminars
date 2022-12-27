@@ -1,16 +1,21 @@
+#Задайте список. Напишите программу, которая определит, присутствует ли в заданном списке строк некое число.
 
 
+from random import randint
 
 num = int(input("Размер массива: "))
-given_list = [i for i in range(-num, num + 1)]
 
-N = int(input("Размер массива: ")) # Вводим размер массива
-print("Элементы массива:")
-lst = [int(input()) for i in range(N)] # Вводим элементы массива
-x = int(input("Число x: ")) # Вводим число x
+numbers = []
+for i in range(num):
+    numbers.append(randint(-num, num + 1))
 
-# Проверяем наличие числа в массиве
-if x in lst:
-    print("YES")
+
+
+print("Элементы массива:", numbers)
+
+x = int(input("Число x: "))
+
+if x in numbers:
+    print(f"Число {x} присутстует в списке")
 else:
-    print("NO")
+    print(f"Число {x} отсутствует в списке")
